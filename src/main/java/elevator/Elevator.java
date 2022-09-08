@@ -1,5 +1,6 @@
 package elevator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Elevator {
@@ -7,7 +8,13 @@ public class Elevator {
     private short currentFloor = 1;
     private short maxFloor;
     private final byte maxPassenger = 5;
-    List<Passenger> passengersList;
+    List<Passenger> passengersList = new ArrayList<>();
+
+    Elevator() {
+        setDirection(Direction.UP);
+
+        System.out.println("Create elevator");
+    }
 
     //Getters and Setters
     public Direction getDirection() {return direction;}
@@ -61,4 +68,19 @@ public class Elevator {
     void addPassenger(Passenger passenger) {getPassengersList().add(passenger);}
     //When someone move from elevator
     void removePassenger(Passenger passenger) {getPassengersList().remove(passenger);}
+
+    void printElevator() {
+        //Print direction
+        if (getDirection().equals(Direction.UP)) {System.out.print("^");} else {System.out.print("v");}
+        System.out.print(" | "); //Left elevator border
+        //Print passengers
+        for (Passenger p : getPassengersList()) {
+            System.out.print(p.getName() + "(" + p.getTargetFloor() + ") ");
+        }
+
+        for (int i = 1; i <= 5 - getPassengersList().size(); i++) {
+            System.out.print("        ");
+        }
+        System.out.print("| "); //Right elevator border
+    }
 }

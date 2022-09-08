@@ -6,7 +6,7 @@ import java.util.List;
 public class Floor {
     private final short floor;
     private short passengerCount;
-    private List<Passenger> passengersList;
+    private List<Passenger> passengersList = new ArrayList<>();
 
     Floor(short floor) {
         //Give number of a floor
@@ -14,6 +14,8 @@ public class Floor {
 
         //Generate random count of passengers
         setPassengerCount((short) (Math.random() * 10));
+
+        System.out.println("Create floor " + floor + " with " + passengerCount + " passengers");
 
         //Generate passengers at the start
         setPassengersList(generatePassengers());
@@ -33,7 +35,7 @@ public class Floor {
 
         for (short i = countFrom; i < countFrom + passengerCount; i++) {
             Passenger passenger = new Passenger(i, floor);
-            passengersList.add(passenger); //Add passenger to the list
+            temporary.add(passenger); //Add passenger to the list
         }
 
         return temporary;
@@ -44,4 +46,22 @@ public class Floor {
 
     //When someone move from this floor
     void removePassenger(Passenger passenger) {passengersList.remove(passenger);}
+
+    void printFloor(Elevator elevator) {
+        //Print elevator
+        if (elevator.getCurrentFloor() == getFloor()) {
+            elevator.printElevator();
+        } else {
+            System.out.print("                                              ");
+        }
+
+        //Print a wall
+        System.out.print(" |  ");
+
+        //Print passengers
+        for (Passenger p2 : getPassengersList()) {
+            System.out.print(p2.getName() + "(" + p2.getTargetFloor() + ") ");
+        }
+        System.out.print("\n");
+    }
 }

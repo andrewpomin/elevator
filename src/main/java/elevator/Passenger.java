@@ -18,6 +18,8 @@ public class Passenger {
 
         //Generate random target floor according to max floors in building
         generateTargetFloor();
+
+        System.out.println("Create " + name + " want to " + targetFloor + " floor");
     }
 
     //Getters and Setters

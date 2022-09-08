@@ -1,5 +1,7 @@
 package elevator;
 
+import static java.lang.Thread.sleep;
+
 public class Controller {
     Building building;
     Elevator elevator;
@@ -13,9 +15,15 @@ public class Controller {
     Elevator getElevator() {return elevator;}
 
     void makeStep() {
-        makeMove();
-        leaveElevator();
-        comeInElevator();
+        try {
+            leaveElevator();
+            comeInElevator();
+            makeMove();
+            printStep();
+            sleep(1000);
+        } catch (InterruptedException e) {
+            System.out.println("Thread was interrupted.");
+        }
     }
 
     void makeMove() {
@@ -23,29 +31,33 @@ public class Controller {
     }
 
     void leaveElevator() {
-        Floor floor = building.getFloor(elevator.getCurrentFloor());
-        for (Passenger p : elevator.getPassengersList()) {
-            p.setCurrentFloor(elevator.getCurrentFloor());
-            if (p.getTargetFloor() == elevator.getCurrentFloor()) {
-                elevator.removePassenger(p);
-                floor.addPassenger(p);
+        if (elevator.getPassengersList() != null) {
+            Floor floor = building.getFloor(elevator.getCurrentFloor());
+            for (Passenger p : elevator.getPassengersList()) {
+                p.setCurrentFloor(elevator.getCurrentFloor());
+                if (p.getTargetFloor() == elevator.getCurrentFloor()) {
+                    elevator.removePassenger(p);
+                    floor.addPassenger(p);
+                }
             }
         }
     }
 
     void comeInElevator() {
         Floor floor = building.getFloor(elevator.getCurrentFloor());
-        if (elevator.hasFreeSpace()) {
-            for (Passenger p : floor.getPassengersList()) {
-                if (p.getDirection().equals(elevator.getDirection())) {
-                    floor.removePassenger(p);
-                    elevator.addPassenger(p);
+        if (floor.getPassengersList() != null) {
+            if (elevator.hasFreeSpace()) {
+                for (Passenger p : floor.getPassengersList()) {
+                    if (p.getDirection().equals(elevator.getDirection())) {
+                        floor.removePassenger(p);
+                        elevator.addPassenger(p);
+                    }
                 }
             }
         }
     }
 
     void printStep() {
-        
+        building.printBuilding();
     }
 }

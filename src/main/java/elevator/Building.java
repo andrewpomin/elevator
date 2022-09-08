@@ -5,13 +5,15 @@ import java.util.List;
 
 public class Building {
     private static short floorCount;
-    private static List<Floor> floorList;
+    private static List<Floor> floorList = new ArrayList<>();
     private static short totalPassengersInBuilding = 0;
     private final Elevator elevator;
 
     Building() {
         //Generate random floor count
         floorCount = (short) ((Math.random() * 15) + 5);
+
+        System.out.println("Create building with " + floorCount + " floors");
 
         //Create floors
         floorList = generateFloors();
@@ -40,7 +42,7 @@ public class Building {
     List<Floor> generateFloors() {
         List<Floor> temporary = new ArrayList<>(getFloorCount());
 
-        for (short i = 0; i < floorCount; i++) {
+        for (short i = 1; i <= floorCount; i++) {
             Floor floor = new Floor(i);
             temporary.add(floor); //Add floor in the list
             addTotalPassengersInBuilding(floor.getPassengerCount()); //Add generated passengers in total count
@@ -57,5 +59,11 @@ public class Building {
         }
 
         return list;
+    }
+
+    void printBuilding() {
+        for (short i = getFloorCount(); i > 0; i--) {
+            getFloor(i).printFloor(getElevator());
+        }
     }
 }
