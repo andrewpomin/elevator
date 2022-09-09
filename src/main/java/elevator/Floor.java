@@ -42,17 +42,25 @@ public class Floor {
     }
 
     //When someone came from elevator on this floor
-    void addPassenger(Passenger passenger) {passengersList.add(passenger);}
+    void addPassenger(Passenger passenger) {getPassengersList().add(passenger); ++passengerCount;}
 
     //When someone move from this floor
-    void removePassenger(Passenger passenger) {passengersList.remove(passenger);}
+    void removePassenger(Passenger passenger) {getPassengersList().remove(passenger); --passengerCount;}
 
+    //Print floor
     void printFloor(Elevator elevator) {
+        //Print floor number
+        if (floor < 10) {
+            System.out.print("0" + floor + " | ");
+        } else {
+            System.out.print(floor + " | ");
+        }
+
         //Print elevator
         if (elevator.getCurrentFloor() == getFloor()) {
             elevator.printElevator();
         } else {
-            System.out.print("                                              ");
+            System.out.print("                                                         "); //If elevator on other floor
         }
 
         //Print a wall
@@ -60,8 +68,9 @@ public class Floor {
 
         //Print passengers
         for (Passenger p2 : getPassengersList()) {
-            System.out.print(p2.getName() + "(" + p2.getTargetFloor() + ") ");
+            p2.printPassenger();
         }
-        System.out.print("\n");
+
+        System.out.print("\n"); //Next floor
     }
 }

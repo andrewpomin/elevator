@@ -70,6 +70,8 @@
       <updated>1662646614055</updated>
       <workItem from="1662646615725" duration="10213000" />
       <workItem from="1662661040921" duration="3668000" />
+      <workItem from="1662670093737" duration="431000" />
+      <workItem from="1662703135871" duration="14642000" />
     </task>
     <servers />
   </component>
@@ -86,16 +88,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/elevator/Elevator.java</url>
-          <line>76</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

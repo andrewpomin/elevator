@@ -8,16 +8,16 @@ public class Passenger {
 
     Passenger(short count, short floor) {
         //Create name
-        name = "passenger" + count;
+        name = "p" + count;
 
         //Set current floor
         setCurrentFloor(floor);
 
-        //Generate random direction
-        generateDirection();
-
         //Generate random target floor according to max floors in building
         generateTargetFloor();
+
+        //Generate random direction
+        generateDirection();
 
         System.out.println("Create " + name + " want to " + targetFloor + " floor");
     }
@@ -31,21 +31,40 @@ public class Passenger {
     public short getTargetFloor() {return targetFloor;}
     public void setTargetFloor(short targetFloor) {this.targetFloor = targetFloor;}
 
-    void generateDirection() {
-        if (Math.random() < 0.5 && getCurrentFloor() != 1) {
-            setDirection(Direction.DOWN); //if random < 0.5 and passenger not on the first floor
-        } else if (getCurrentFloor() != Building.getFloorCount()) {
-            setDirection(Direction.UP); //If random > 0.5 or/and passenger on first floor
-        } else {
-            setDirection(Direction.DOWN); //if passenger on the last floor
-        }
-    }
-
+    //Generate random next target floor
     void generateTargetFloor() {
         short random;
         do {
             random = (short) (Math.random() * (Building.getFloorCount() - 1) + 1);
         } while (random == getCurrentFloor());
         setTargetFloor(random);
+        generateDirection();
+    }
+
+    //Generate direction according to target floor
+    void generateDirection() {
+        if (getTargetFloor() - getCurrentFloor() > 0) {
+            setDirection(Direction.UP);
+        } else {
+            setDirection(Direction.DOWN);
+        }
+    }
+
+    //Print passenger
+    void printPassenger() {
+        String floor;
+        if (getTargetFloor() < 10) {
+            floor = "0" + getTargetFloor();
+        } else {
+            floor = String.valueOf(getTargetFloor());
+        }
+
+        if(Short.parseShort(name.substring(1)) < 10) {
+            System.out.print(" " + name + " -> " + floor + " ");
+        } else if (Short.parseShort(name.substring(1)) < 100) {
+            System.out.print(name + " -> " + floor + " ");
+        } else {
+            System.out.print(name + "-> " + floor + " ");
+        }
     }
 }

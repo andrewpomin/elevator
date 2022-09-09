@@ -51,16 +51,7 @@ public class Building {
         return temporary;
     }
 
-    List<Passenger> getPassengersList() {
-        List<Passenger> list = new ArrayList<>(getTotalPassengersInBuilding());
-
-        for (Floor f : getFloorList()) {
-            list.addAll(f.getPassengersList());
-        }
-
-        return list;
-    }
-
+    //Print building
     void printBuilding() {
         for (short i = getFloorCount(); i > 0; i--) {
             getFloor(i).printFloor(getElevator());
