@@ -1,4 +1,6 @@
-package elevator;
+package building;
+
+import writers.LogWriter;
 
 import java.util.ArrayList;
 import java.util.List;

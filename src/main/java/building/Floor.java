@@ -1,4 +1,7 @@
-package elevator;
+package building;
+
+import writers.LogWriter;
+import writers.Printer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,28 +52,32 @@ public class Floor {
 
     //Print floor
     void printFloor(Elevator elevator) {
+        StringBuilder sb = new StringBuilder();
         //Print floor number
         if (floor < 10) {
-            System.out.print("0" + floor + " | ");
+            sb.append(" 0").append(floor).append(" | ");
         } else {
-            System.out.print(floor + " | ");
+            sb.append(" ").append(floor).append(" | ");
         }
 
         //Print elevator
         if (elevator.getCurrentFloor() == getFloor()) {
-            elevator.printElevator();
+            sb.append(elevator.printElevator());
         } else {
-            System.out.print("                                                         "); //If elevator on other floor
+            sb.append("                                                         "); //If elevator on other floor
         }
 
         //Print a wall
-        System.out.print(" |  ");
+        sb.append(" |  ");
 
         //Print passengers
         for (Passenger p2 : getPassengersList()) {
-            p2.printPassenger();
+            sb.append(p2.printPassenger());
         }
 
-        System.out.print("\n"); //Next floor
+        System.out.println(sb);
+
+        sb.append("\n"); //Next floor
+        Printer.print(sb.toString());
     }
 }

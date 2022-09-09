@@ -1,4 +1,7 @@
-package elevator;
+package building;
+
+import enums.Direction;
+import writers.LogWriter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,23 +85,24 @@ public class Elevator {
     void removePassenger(Passenger passenger) {getPassengersList().remove(passenger);}
 
     //Print elevator
-    void printElevator() {
+    StringBuilder printElevator() {
+        StringBuilder sb = new StringBuilder();
         //Print direction
-        if (getDirection().equals(Direction.UP)) {System.out.print("^");} else {System.out.print("v");}
-        System.out.print(" | "); //Left elevator border
+        if (getDirection().equals(Direction.UP)) {sb.append("^");} else {sb.append("v");}
+        sb.append(" | "); //Left elevator border
 
         //Print passengers
         for (Passenger p : getPassengersList()) {
-            p.printPassenger();
+            sb.append(p.printPassenger());
         }
 
-        for (int i = 1; i <= 5 - getPassengersList().size(); i++) {
-            System.out.print("          ");
-        }
+        sb.append("          ".repeat(Math.max(0, 5 - getPassengersList().size())));
 
-        System.out.print("| "); //Right elevator border
+        sb.append("| "); //Right elevator border
 
         //Print direction
-        if (getDirection().equals(Direction.UP)) {System.out.print("^");} else {System.out.print("v");}
+        if (getDirection().equals(Direction.UP)) {sb.append("^");} else {sb.append("v");}
+
+        return sb;
     }
 }

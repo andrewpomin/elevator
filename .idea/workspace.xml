@@ -5,16 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="238e9d00-4ef7-4db1-8ff3-4d00c654aebc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/elevator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/elevator/LogWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/writers/Printer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elevator/Building.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elevator/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elevator/Elevator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elevator/Floor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elevator/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elevator/Passenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Building.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enums/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Elevator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Floor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/LogWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/writers/LogWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Passenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +57,7 @@
 }]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="elevator.Main" />
+      <option name="MAIN_CLASS_NAME" value="building.Main" />
       <module name="elevator" />
       <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
         <option name="credential" />
@@ -78,7 +80,7 @@
       <workItem from="1662646615725" duration="10213000" />
       <workItem from="1662661040921" duration="3668000" />
       <workItem from="1662670093737" duration="431000" />
-      <workItem from="1662703135871" duration="19654000" />
+      <workItem from="1662703135871" duration="23627000" />
     </task>
     <servers />
   </component>

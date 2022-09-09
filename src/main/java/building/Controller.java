@@ -1,4 +1,7 @@
-package elevator;
+package building;
+
+import enums.Direction;
+import writers.LogWriter;
 
 import java.util.ArrayList;
 import java.util.List;

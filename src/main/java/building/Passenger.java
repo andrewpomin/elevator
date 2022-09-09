@@ -1,4 +1,7 @@
-package elevator;
+package building;
+
+import enums.Direction;
+import writers.LogWriter;
 
 public class Passenger {
     private final String name;
@@ -51,8 +54,9 @@ public class Passenger {
     }
 
     //Print passenger
-    void printPassenger() {
+    StringBuilder printPassenger() {
         String floor;
+        StringBuilder sb = new StringBuilder();
         if (getTargetFloor() < 10) {
             floor = "0" + getTargetFloor();
         } else {
@@ -60,11 +64,13 @@ public class Passenger {
         }
 
         if(Short.parseShort(name.substring(1)) < 10) {
-            System.out.print("  " + name + "->" + floor + "  ");
+            sb.append("  ").append(name).append("->").append(floor).append("  ");
         } else if (Short.parseShort(name.substring(1)) < 100) {
-            System.out.print(" " + name + "->" + floor + "  ");
+            sb.append(" ").append(name).append("->").append(floor).append("  ");
         } else {
-            System.out.print(name + "->" + floor);
+            sb.append(name).append("->").append(floor);
         }
+
+        return sb;
     }
 }
