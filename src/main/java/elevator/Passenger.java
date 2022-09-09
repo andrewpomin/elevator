@@ -10,16 +10,13 @@ public class Passenger {
         //Create name
         name = "p" + count;
 
+        LogWriter.writeLog("Create passenger " + name + "\n");
+
         //Set current floor
         setCurrentFloor(floor);
 
         //Generate random target floor according to max floors in building
         generateTargetFloor();
-
-        //Generate random direction
-        generateDirection();
-
-        System.out.println("Create " + name + " want to " + targetFloor + " floor");
     }
 
     //Getters and Setters
@@ -38,6 +35,7 @@ public class Passenger {
             random = (short) (Math.random() * (Building.getFloorCount() - 1) + 1);
         } while (random == getCurrentFloor());
         setTargetFloor(random);
+        LogWriter.writeLog("Passenger " + name + " has new target floor " + getTargetFloor());
         generateDirection();
     }
 
@@ -45,8 +43,10 @@ public class Passenger {
     void generateDirection() {
         if (getTargetFloor() - getCurrentFloor() > 0) {
             setDirection(Direction.UP);
+            LogWriter.writeLog(" and direction UP\n");
         } else {
             setDirection(Direction.DOWN);
+            LogWriter.writeLog(" and direction DOWN\n");
         }
     }
 
@@ -60,11 +60,11 @@ public class Passenger {
         }
 
         if(Short.parseShort(name.substring(1)) < 10) {
-            System.out.print(" " + name + " -> " + floor + " ");
+            System.out.print("  " + name + "->" + floor + "  ");
         } else if (Short.parseShort(name.substring(1)) < 100) {
-            System.out.print(name + " -> " + floor + " ");
+            System.out.print(" " + name + "->" + floor + "  ");
         } else {
-            System.out.print(name + "-> " + floor + " ");
+            System.out.print(name + "->" + floor);
         }
     }
 }

@@ -13,7 +13,7 @@ public class Building {
         //Generate random floor count
         floorCount = (short) ((Math.random() * 15) + 5);
 
-        System.out.println("Create building with " + floorCount + " floors");
+        LogWriter.writeLog("Create building with " + floorCount + " floors\n");
 
         //Create floors
         floorList = generateFloors();

@@ -15,7 +15,7 @@ public class Floor {
         //Generate random count of passengers
         setPassengerCount((short) (Math.random() * 10));
 
-        System.out.println("Create floor " + floor + " with " + passengerCount + " passengers");
+        LogWriter.writeLog("Create floor " + floor + " with " + passengerCount + " passengers\n");
 
         //Generate passengers at the start
         setPassengersList(generatePassengers());

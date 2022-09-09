@@ -14,7 +14,7 @@ public class Elevator {
     Elevator() {
         setDirection(Direction.UP);
 
-        System.out.println("Create elevator");
+        LogWriter.writeLog("Create elevator\n");
     }
 
     //Getters and Setters
@@ -44,15 +44,19 @@ public class Elevator {
 
         if (counter > 0) {
             setDirection(Direction.UP);
+            LogWriter.writeLog("Elevator has new direction: UP\n");
         } else if (counter < 0) {
             setDirection(Direction.DOWN);
+            LogWriter.writeLog("elevator has new direction: DOWN\n");
         } else {
             setDirection(currentDirection);
+            LogWriter.writeLog("Elevator continue move in current direction: " + getDirection() + "\n");
         }
     }
 
     //Generate max floor what needed to passengers
     void calculateTargetFloor() {
+        short previousTarget = getTargetFloor();
         if (getDirection().equals(Direction.UP)) {
             for (Passenger p : getPassengersList()) {
                 if (p.getTargetFloor() > getTargetFloor()) {
@@ -65,6 +69,10 @@ public class Elevator {
                     setTargetFloor(p.getTargetFloor());
                 }
             }
+        }
+
+        if (previousTarget != getTargetFloor()) {
+            LogWriter.writeLog("Elevator has new target floor: " + getTargetFloor() + "\n");
         }
     }
 

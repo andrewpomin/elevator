@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="238e9d00-4ef7-4db1-8ff3-4d00c654aebc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/elevator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/elevator/LogWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elevator/Building.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elevator/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elevator/Elevator.java" afterDir="false" />
@@ -38,16 +41,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/projects/elevator/src/main/resources/META-INF/MANIFEST.MF",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="elevator.Main" />
       <module name="elevator" />
       <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
@@ -71,7 +78,7 @@
       <workItem from="1662646615725" duration="10213000" />
       <workItem from="1662661040921" duration="3668000" />
       <workItem from="1662670093737" duration="431000" />
-      <workItem from="1662703135871" duration="14642000" />
+      <workItem from="1662703135871" duration="19654000" />
     </task>
     <servers />
   </component>

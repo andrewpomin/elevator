@@ -37,9 +37,9 @@ public class Controller {
             addPassengersToTheFloor(); //Add passengers who just arrived
             makeMove(); //Elevator goes to the next floor
             printStep(); //Print this step
-            sleep(2000); //Wait
+            sleep(3000); //Wait
         } catch (InterruptedException e) {
-            System.out.println("Thread was interrupted.");
+            LogWriter.writeLog("Thread was interrupted\n");
         }
     }
 
