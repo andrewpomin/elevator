@@ -4,14 +4,17 @@ import enums.Direction;
 import writers.LogWriter;
 
 public class Passenger {
+    private final Building building;
     private final String name;
     private Direction direction;
-    private short currentFloor;
-    private short targetFloor;
+    private int currentFloor;
+    private int targetFloor;
 
-    Passenger(short count, short floor) {
+    Passenger(int count, int floor, Building building) {
         //Create name
         name = "p" + count;
+
+        this.building = building;
 
         LogWriter.writeLog("Create passenger " + name + "\n");
 
@@ -26,16 +29,16 @@ public class Passenger {
     public String getName() {return name;}
     public Direction getDirection() {return direction;}
     public void setDirection(Direction direction) {this.direction = direction;}
-    public short getCurrentFloor() {return currentFloor;}
-    public void setCurrentFloor(short currentFloor) {this.currentFloor = currentFloor;}
-    public short getTargetFloor() {return targetFloor;}
-    public void setTargetFloor(short targetFloor) {this.targetFloor = targetFloor;}
+    public int getCurrentFloor() {return currentFloor;}
+    public void setCurrentFloor(int currentFloor) {this.currentFloor = currentFloor;}
+    public int getTargetFloor() {return targetFloor;}
+    public void setTargetFloor(int targetFloor) {this.targetFloor = targetFloor;}
 
     //Generate random next target floor
     void generateTargetFloor() {
-        short random;
+        int random;
         do {
-            random = (short) (Math.random() * (Building.getFloorCount() - 1) + 1);
+            random = (int) (Math.random() * (building.getFloorCount() - 1) + 1); //From 0 to max floor
         } while (random == getCurrentFloor());
         setTargetFloor(random);
         LogWriter.writeLog("Passenger " + name + " has new target floor " + getTargetFloor());
@@ -58,11 +61,12 @@ public class Passenger {
         String floor;
         StringBuilder sb = new StringBuilder();
         if (getTargetFloor() < 10) {
-            floor = "0" + getTargetFloor();
+            floor = "0" + getTargetFloor(); //If floor < 10 - write 0 at the beginning
         } else {
             floor = String.valueOf(getTargetFloor());
         }
 
+        //For text align
         if(Short.parseShort(name.substring(1)) < 10) {
             sb.append("  ").append(name).append("->").append(floor).append("  ");
         } else if (Short.parseShort(name.substring(1)) < 100) {

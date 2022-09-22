@@ -8,9 +8,9 @@ import java.util.List;
 
 public class Elevator {
     private Direction direction;
-    private short currentFloor = 1;
-    private short targetFloor;
-    private final byte maxPassenger = 5;
+    private int currentFloor = 1;
+    private int targetFloor;
+    private final int maxPassenger = 5; //Max count of passengers in elevator - 5
     private boolean movesFromLastFloors;
     List<Passenger> passengersList = new ArrayList<>();
 
@@ -23,10 +23,10 @@ public class Elevator {
     //Getters and Setters
     public Direction getDirection() {return direction;}
     public void setDirection(Direction direction) {this.direction = direction;}
-    public short getCurrentFloor() {return currentFloor;}
+    public int getCurrentFloor() {return currentFloor;}
     public void setCurrentFloor() {if (getDirection().equals(Direction.UP)) {++currentFloor;} else {--currentFloor;}}
-    public short getTargetFloor() {return targetFloor;}
-    public void setTargetFloor(short targetFloor) {this.targetFloor = targetFloor;}
+    public int getTargetFloor() {return targetFloor;}
+    public void setTargetFloor(int targetFloor) {this.targetFloor = targetFloor;}
     public byte getMaxPassenger() {return maxPassenger;}
     public List<Passenger> getPassengersList() {return passengersList;}
     public boolean hasFreeSpace() {return getPassengersList().size() != getMaxPassenger();}
@@ -59,7 +59,7 @@ public class Elevator {
 
     //Generate max floor what needed to passengers
     void calculateTargetFloor() {
-        short previousTarget = getTargetFloor();
+        int previousTarget = getTargetFloor();
         if (getDirection().equals(Direction.UP)) {
             for (Passenger p : getPassengersList()) {
                 if (p.getTargetFloor() > getTargetFloor()) {

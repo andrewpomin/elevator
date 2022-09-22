@@ -7,16 +7,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Floor {
-    private final short floor;
-    private short passengerCount;
+    private final Building building;
+    private final int floor;
+    private int passengerCount;
     private List<Passenger> passengersList = new ArrayList<>();
 
-    Floor(short floor) {
+    Floor(int floor, Building building) {
         //Give number of a floor
         this.floor = floor;
 
-        //Generate random count of passengers
-        setPassengerCount((short) (Math.random() * 10));
+        //Set building
+        this.building = building;
+
+        //Generate random count of passengers (from 0 to 10)
+        setPassengerCount((int) (Math.random() * 10));
 
         LogWriter.writeLog("Create floor " + floor + " with " + passengerCount + " passengers\n");
 
@@ -25,19 +29,19 @@ public class Floor {
     }
 
     //Getters and Setters
-    public short getFloor() {return floor;}
-    public short getPassengerCount() {return passengerCount;}
-    public void setPassengerCount(short passengerCount) {this.passengerCount = passengerCount;}
+    public int getFloor() {return floor;}
+    public int getPassengerCount() {return passengerCount;}
+    public void setPassengerCount(int passengerCount) {this.passengerCount = passengerCount;}
     public List<Passenger> getPassengersList() {return passengersList;}
     public void setPassengersList(List<Passenger> passengersList) {this.passengersList = passengersList;}
 
     //Create passenger at the start
     List<Passenger> generatePassengers() {
         List<Passenger> temporary = new ArrayList<>(getPassengerCount());
-        short countFrom = (short) (Building.getTotalPassengersInBuilding() + 1); //Get from which number continue
+        int countFrom = building.getTotalPassengersInBuilding() + 1; //Get from which number continue
 
-        for (short i = countFrom; i < countFrom + passengerCount; i++) {
-            Passenger passenger = new Passenger(i, floor);
+        for (int i = countFrom; i < countFrom + passengerCount; i++) {
+            Passenger passenger = new Passenger(i, floor, building);
             temporary.add(passenger); //Add passenger to the list
         }
 
@@ -53,7 +57,8 @@ public class Floor {
     //Print floor
     void printFloor(Elevator elevator) {
         StringBuilder sb = new StringBuilder();
-        //Print floor number
+
+        //Print floor number (if floor < 10 - write 0 at the beginning)
         if (floor < 10) {
             sb.append(" 0").append(floor).append(" | ");
         } else {

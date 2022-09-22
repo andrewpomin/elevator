@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="238e9d00-4ef7-4db1-8ff3-4d00c654aebc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/writers/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Building.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enums/Direction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Elevator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Floor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/LogWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/writers/LogWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elevator/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Passenger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/building/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Building.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/building/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/building/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Elevator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/building/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Floor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/building/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/building/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Passenger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,18 +39,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/projects/elevator/src/main/resources/META-INF/MANIFEST.MF",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/projects/elevator/src/main/resources/META-INF/MANIFEST.MF&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="building.Main" />
@@ -80,7 +76,9 @@
       <workItem from="1662646615725" duration="10213000" />
       <workItem from="1662661040921" duration="3668000" />
       <workItem from="1662670093737" duration="431000" />
-      <workItem from="1662703135871" duration="23627000" />
+      <workItem from="1662703135871" duration="24834000" />
+      <workItem from="1662807074217" duration="78000" />
+      <workItem from="1663834051711" duration="1350000" />
     </task>
     <servers />
   </component>

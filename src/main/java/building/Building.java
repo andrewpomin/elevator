@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Building {
-    private static short floorCount;
-    private static List<Floor> floorList = new ArrayList<>();
-    private static short totalPassengersInBuilding = 0;
+    private final int floorCount;
+    private final List<Floor> floorList;
+    private short totalPassengersInBuilding = 0;
     private final Elevator elevator;
 
     Building() {
-        //Generate random floor count
+        //Generate random floor count (form 5 to 20)
         floorCount = (short) ((Math.random() * 15) + 5);
 
         LogWriter.writeLog("Create building with " + floorCount + " floors\n");
@@ -25,9 +25,9 @@ public class Building {
     }
 
     //Getters and Setters
-    static short getFloorCount() {return floorCount;}
-    static List<Floor> getFloorList() {return floorList;}
-    Floor getFloor(short floor) {
+    public int getFloorCount() {return floorCount;}
+    public List<Floor> getFloorList() {return floorList;}
+    public Floor getFloor(int floor) {
         for (Floor f : getFloorList()) {
             if (f.getFloor() == floor) {
                 return f;
@@ -36,16 +36,16 @@ public class Building {
 
         return null;
     }
-    static short getTotalPassengersInBuilding() {return totalPassengersInBuilding;}
-    void addTotalPassengersInBuilding(short count) {totalPassengersInBuilding += count;}
+    public short getTotalPassengersInBuilding() {return totalPassengersInBuilding;}
+    void addTotalPassengersInBuilding(int count) {totalPassengersInBuilding += count;}
     Elevator getElevator() {return elevator;}
 
     //Create floors in the building
     List<Floor> generateFloors() {
         List<Floor> temporary = new ArrayList<>(getFloorCount());
 
-        for (short i = 1; i <= floorCount; i++) {
-            Floor floor = new Floor(i);
+        for (int i = 1; i <= floorCount; i++) {
+            Floor floor = new Floor(i, this);
             temporary.add(floor); //Add floor in the list
             addTotalPassengersInBuilding(floor.getPassengerCount()); //Add generated passengers in total count
         }
@@ -55,7 +55,7 @@ public class Building {
 
     //Print building
     void printBuilding() {
-        for (short i = getFloorCount(); i > 0; i--) {
+        for (int i = getFloorCount(); i > 0; i--) {
             getFloor(i).printFloor(getElevator());
         }
     }

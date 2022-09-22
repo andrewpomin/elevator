@@ -14,7 +14,7 @@ public class Main {
         if (console != null) {
             count = Integer.parseInt(console.readLine("Type count of steps you want: "));
         } else {
-            count = 10;
+            count = 10; //Default - 10 steps
         }
         Controller controller = new Controller();
         System.out.println("     ------------------------- Start -------------------------\n");

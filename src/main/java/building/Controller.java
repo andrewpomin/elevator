@@ -54,7 +54,7 @@ public class Controller {
 
     //Update location for passengers in elevator
     void updateLocation() {
-        for(Passenger p: getElevator().getPassengersList()) {
+        for (Passenger p: getElevator().getPassengersList()) {
             p.setCurrentFloor(getElevator().getCurrentFloor());
         }
     }
@@ -130,7 +130,7 @@ public class Controller {
             if (list.size() == 0) {
 
                 //If this is the last floors (first or last)
-                if (getElevator().getCurrentFloor() == 1 || getElevator().getCurrentFloor() == Building.getFloorCount()) {
+                if (getElevator().getCurrentFloor() == 1 || getElevator().getCurrentFloor() == building.getFloorCount()) {
 
                     //Choose direction from last floors
                     if (getElevator().getCurrentFloor() == 1) {
@@ -165,11 +165,11 @@ public class Controller {
     void getNewTarget() {
         //If direction was up and this is not the last floor
         if (getElevator().getDirection().equals(Direction.UP)) {
-            getElevator().setTargetFloor(Building.getFloorCount());
+            getElevator().setTargetFloor(building.getFloorCount());
 
-            //If direction was down or thi is the last floor
+            //If direction was down or this is the last floor
         } else {
-            getElevator().setTargetFloor((short) 1);
+            getElevator().setTargetFloor(1);
         }
     }
 
@@ -178,12 +178,12 @@ public class Controller {
     void getNewTargetMovingFromLastFloors() {
         //If this is the max floor - set previous floor
         if (getElevator().getDirection().equals(Direction.DOWN)) {
-            getElevator().setTargetFloor((short) (getElevator().getCurrentFloor() - 1));
+            getElevator().setTargetFloor(getElevator().getCurrentFloor() - 1);
             getElevator().setMovesFromLastFloors(true);
 
         //If direction this is the last floor
         } else {
-            getElevator().setTargetFloor((short) (getElevator().getCurrentFloor() + 1));
+            getElevator().setTargetFloor(getElevator().getCurrentFloor() + 1);
             getElevator().setMovesFromLastFloors(true);
         }
     }
