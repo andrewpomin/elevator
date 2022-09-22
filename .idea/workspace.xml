@@ -6,13 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="238e9d00-4ef7-4db1-8ff3-4d00c654aebc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/building/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Building.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/building/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/building/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Elevator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/building/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Floor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/building/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/building/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/building/Passenger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +71,7 @@
       <workItem from="1662670093737" duration="431000" />
       <workItem from="1662703135871" duration="24834000" />
       <workItem from="1662807074217" duration="78000" />
-      <workItem from="1663834051711" duration="1350000" />
+      <workItem from="1663834051711" duration="1641000" />
     </task>
     <servers />
   </component>
